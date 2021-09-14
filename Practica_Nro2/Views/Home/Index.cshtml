@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home";
+    var Mascotas = ViewBag.ListaMascotas;
 }
 
 <div>
@@ -33,30 +34,18 @@
 
     <div class="col-12">
         <div class="card-group">
-            <div class="card" style="width: 18rem; margin-left:15px;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Adoptar Mascota</a>
+            @foreach (var lst in Mascotas)
+            {
+                <div class="card" style="width: 18rem; margin-left:15px;">
+                    <img src="@lst.Foto " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">@lst.Raza </h4>
+                        <h4 class="card-subtitle">@lst.Tipo </h4>
+                        <p class="card-text"> @lst.Descripcion </p>
+                        <a href="#" class="btn btn-primary">Adoptar Mascota</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem; margin-left: 15px;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem; margin-left: 15px;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>          
+            }
         </div>
     </div>
 </div>
