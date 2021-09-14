@@ -9,6 +9,7 @@ namespace Practica_Nro2.Models
     {
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
+        public string Foto { get; set; }
 
     }
 }
