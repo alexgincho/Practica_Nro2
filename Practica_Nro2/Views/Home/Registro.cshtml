@@ -1,15 +1,64 @@
-﻿@{ 
+﻿@model Practica_Nro2.Models.Usuario;
+
+@{
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div class="row">
-
+<div class="row" style="color:white;">
+    <h1> Registro de Adopcion</h1>
     <div class="col-12">
-        
-        <form>
+        <form asp-action="Registro" method="post">
+            <div class="form-group">
+                <div class="col-6">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" asp-for="Nombre" class="form-control form-control-sm" id="Nombre" placeholder="Alexander" autocomplete="off">
+                </div>
+                <div class="col-6">
+                    <label for="ApellidoP">Apellido Paterno</label>
+                    <input type="text" asp-for="ApellidoPaterno" class="form-control form-control-sm" id="ApellidoP" placeholder="Chancayauri" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-6">
+                    <label for="ApellidoM">Apellido Materno</label>
+                    <input type="text" asp-for="ApellidoMaterno" class="form-control form-control-sm" id="ApellidoM" placeholder="Gincho" autocomplete="off">
+                </div>
+                <div class="col-6">
+                    <label for="Telefono">Telefono</label>
+                    <input type="text" asp-for="Telefono" class="form-control form-control-sm" id="Telefono" placeholder="998276350" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-6">
+                    <label for="Distrito">Distrito</label>
+                    <select class="form-control" id="Distrito" asp-for="Distrito">
+                        <option value="Cayma">Cayma</option>
+                        <option value="Cerro Colorado">Cerro Colorado</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="Direccion">Direccion</label>
+                    <input type="text" asp-for="Direccion" class="form-control form-control-sm" id="Direccion" placeholder="Av. Ejercito #345" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group">
 
+                <div class="col-6">
+                    <label for="TipoM">Tipo de Mascota</label>
+                    <select class="form-control" id="TipoM" asp-for="Mascota.Tipo">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato">Gato</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="DescripMascota">Descripcion Mascota</label>
+                    <textarea class="form-control" id="DescripMascota" rows="3" asp-for="Mascota.Descripcion"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit"> Registrar Adopcion </button>
+            </div>
         </form>
-    
     </div>
 
 </div>

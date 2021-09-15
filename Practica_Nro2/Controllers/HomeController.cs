@@ -31,11 +31,16 @@ namespace Practica_Nro2.Controllers
 
         public IActionResult Registro()
         {
-            return View();
+            Usuario usuario = new Usuario();
+            return View(usuario);
         }
         [HttpPost]
         public IActionResult Registro(Usuario Usuario)
         {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
         // Creando Listado de Mascotas para los Cards
